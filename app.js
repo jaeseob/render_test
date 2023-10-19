@@ -167,7 +167,7 @@ app.get('/download_data', async function (req, res){
   let query_msg = `\\COPY ${table_name} TO '${file_name}' DELIMITER ',' CSV HEADER;`
 
   // console.log(query_msg)
-  res.send(`heroku pg:psql -a csnl-experiment -c "${query_msg}"`)
+  res.send(`PGPASSWORD=eWS8gUgTo9MzPE2ngCRWlsxvz1WNGW9t psql -h dpg-cknvbmea02is73c4s130-a.oregon-postgres.render.com -U vnilab tbl<br>"${query_msg}"`)
 
   // await client.query(query_msg)
   // res.download(file_name)
