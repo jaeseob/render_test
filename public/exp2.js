@@ -16,8 +16,8 @@ let cfg = {
 
 }
 
-cfg.nBlock = 2
-cfg.nTrial = 4
+cfg.nBlock = 8
+cfg.nTrial = 40
 
 let scaling_task = false
 

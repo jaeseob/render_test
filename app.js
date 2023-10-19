@@ -137,12 +137,6 @@ app.post('/send_data2', function (req, res){
 
   let query_msg = `INSERT INTO ${table_name} (ID, task, data) VALUES (${data.ID} ,'${data.task}','${JSON.stringify(data.data)}') ON CONFLICT (ID) DO UPDATE SET task = EXCLUDED.task, data = EXCLUDED.data;`
 
-  // let query_msg = `INSERT INTO ${table_name} (ID, task, data) VALUES (${data.ID} ,'${data.task}','${JSON.stringify(data.data)}') ON CONFLICT (ID) DO NOTHING;`
-  // console.log(query_msg)
-  
-  // console.log(`${data.ID} send data`)
-  // console.log(query_msg)
-
   client.query(query_msg,
     (err, result) => {
       if(result){
@@ -167,7 +161,7 @@ app.get('/download_data', async function (req, res){
   let query_msg = `\\COPY ${table_name} TO '${file_name}' DELIMITER ',' CSV HEADER;`
 
   // console.log(query_msg)
-  res.send(`PGPASSWORD=eWS8gUgTo9MzPE2ngCRWlsxvz1WNGW9t psql -h dpg-cknvbmea02is73c4s130-a.oregon-postgres.render.com -U vnilab tbl<br>"${query_msg}"`)
+  res.send(`PGPASSWORD=eWS8gUgTo9MzPE2ngCRWlsxvz1WNGW9t psql -h dpg-cknvbmea02is73c4s130-a.oregon-postgres.render.com -U vnilab tbl<br>${query_msg}`)
 
   // await client.query(query_msg)
   // res.download(file_name)
@@ -181,6 +175,6 @@ app.get('/', function (req, res) {
 });
 
 app.listen(process.env.PORT || 3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on port!!');
 });
 
