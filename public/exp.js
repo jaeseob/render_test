@@ -3,11 +3,11 @@ let PPC = 35
 // basic configurations
 let cfg = {
     'oris':[...Array(18).keys()].map(x => x*10 + 5),
-    'nBlock': 8,
-    'nTrial': 50,
+    'nBlock': 2,
+    'nTrial': 3,
     
-    'CPC':0.4,
-    'gaussSig' : 2,
+    'CPC':0.2,
+    'gaussSig' : 1,
     'locDiff' : 3,
     'cenDiff' : 2,
 
